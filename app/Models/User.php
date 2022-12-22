@@ -24,9 +24,15 @@ class User extends Authenticatable
      * @var string[]
      */
     protected $fillable = [
-        'name',
+        'firstname',
+        'lastname',
         'email',
         'password',
+        'city',
+        'birthdate',
+        'streetandnumber',
+        'zipcode',
+        'phone',
     ];
 
     /**
@@ -57,5 +63,11 @@ class User extends Authenticatable
      */
     protected $appends = [
         'profile_photo_url',
+        'name',
     ];
+
+    public function getNameAttribute()
+    {
+        return $this->firstname . ' ' . $this->lastname;
+    }
 }

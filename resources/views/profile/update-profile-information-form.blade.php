@@ -54,11 +54,16 @@
 
         <!-- Name -->
         <div class="col-span-6 sm:col-span-4">
-            <x-jet-label for="name" value="{{ __('Name') }}" />
-            <x-jet-input id="name" type="text" class="mt-1 block w-full" wire:model.defer="state.name" autocomplete="name" />
-            <x-jet-input-error for="name" class="mt-2" />
+            <x-jet-label for="firstname" value="Voornaam" />
+            <x-jet-input id="firstname" type="text" class="mt-1 block w-full" wire:model.defer="state.firstname" autocomplete="firstname" />
+            <x-jet-input-error for="firstname" class="mt-2" />
         </div>
-
+        <!-- Name -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="lastname" value="{{ __('Name') }}" />
+            <x-jet-input id="lastname" type="text" class="mt-1 block w-full" wire:model.defer="state.lastname" autocomplete="lastname" />
+            <x-jet-input-error for="lastname" class="mt-2" />
+        </div>
         <!-- Email -->
         <div class="col-span-6 sm:col-span-4">
             <x-jet-label for="email" value="{{ __('Email') }}" />
@@ -81,6 +86,40 @@
                 @endif
             @endif
         </div>
+        <!-- Birthdate -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="birthdate" value="Geboortedatum" />
+            <x-jet-input id="birthdate" type="date" min="1900-01-01" max="2010-01-01" class="mt-1 block w-full" wire:model.defer="state.birthdate" autocomplete="birthdate" />
+            <x-jet-input-error for="birthdate" class="mt-2" />
+        </div>
+        <!-- Street -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="streetandnumber" value="Straat en nummer" />
+            <x-jet-input id="streetandnumber" type="text" class="mt-1 block w-full" wire:model.defer="state.streetandnumber" autocomplete="streetandnumber" />
+            <x-jet-input-error for="streetandnumber" class="mt-2" />
+        </div>
+        <!-- Street -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="city" value="Gemeente" />
+            <x-jet-input id="city" type="text" class="mt-1 block w-full" wire:model.defer="state.city" autocomplete="city" />
+            <x-jet-input-error for="city" class="mt-2" />
+        </div>
+        <!-- Zip -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="zipcode" value="Postcode" />
+            <x-jet-input id="zipcode" type="number" min="1000" max="9999" class="mt-1 block w-full" wire:model.defer="state.zipcode" autocomplete="zipcode" />
+            <x-jet-input-error for="zipcode" class="mt-2" />
+        </div>
+        <!-- Phone -->
+        <div class="col-span-6 sm:col-span-4">
+            <x-jet-label for="phone" value="Telefoon" />
+            <x-jet-input id="phone" type="tel" class="mt-1 block w-full" wire:model.defer="state.phone" autocomplete="phone" />
+            <x-jet-input-error for="phone" class="mt-2" />
+        </div>
+
+
+
+
     </x-slot>
 
     <x-slot name="actions">
